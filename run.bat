@@ -1,0 +1,1 @@
+wt -p "Command Prompt" py kkscraper.py >nul 2>&1 || ( py kkscraper.py )
