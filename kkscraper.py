@@ -30,7 +30,11 @@ def main():
     signal.signal(signal.SIGINT, exitGracefully)
     signal.signal(signal.SIGTERM, exitGracefully)
     # history
-    historyFile = open(HISTORY_FILENAME,"w+")
+    historyFile = None
+    try:
+        historyFile = open(HISTORY_FILENAME,"r+")
+    except:
+        historyFile = open(HISTORY_FILENAME,"w+")
     history = None
     try:
         history = json.load(historyFile)
